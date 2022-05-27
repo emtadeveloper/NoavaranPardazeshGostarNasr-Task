@@ -1,0 +1,47 @@
+@import "../../style/extend.scss";
+@import "../../style/mixin.scss";
+@import "../../style/variable.scss";
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    @include box(100%,70vh);
+    background-color: $backgroundColor;
+    .wrapper  {
+        flex-grow: 1;
+    }
+}
+.box{
+    height: 25%;
+    display: flex;
+    font-size: 2rem;
+    color : $lightText;
+    padding-left:5rem;
+    align-items: center;
+}
+.box:nth-child(2){
+    border-top:.1rem solid $borderColor;
+    border-right: .1rem solid $borderColor;
+    border-bottom: .1rem solid $borderColor;
+}
+.box:nth-child(3){
+    border-right: .1rem solid rgba(0,0,0,.1);
+}
+.box:nth-child(4){
+    border-top:.1rem solid rgba(0,0,0,.1);
+    border-right: .1rem solid rgba(0,0,0,.1);
+    border-bottom: .1rem solid rgba(0,0,0,.1);
+}
+.box:nth-child(5){
+    border-right: .1rem solid rgba(0,0,0,.1);
+}
+.bgWhite{
+    background-color: $white;
+}
+.btn{
+    color: $white;
+    font-size: 2rem;
+    @extend .flex__center;
+    @include box(100%,25%);
+    background-color: #ff715b;
+}
