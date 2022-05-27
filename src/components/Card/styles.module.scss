@@ -1,0 +1,66 @@
+@import "../../style/mixin.scss";
+@import "../../style/variable.scss";
+@import "../../style/extend.scss";
+
+.wrapper{
+    padding:  1rem  2rem;
+    @include box(25%,50rem);
+    .card {
+        height: 100%;
+        background-color: $white;
+        border : .2rem solid $borderColor;
+        &:hover {
+            transition:  .5s;
+            box-shadow: -.1rem .9rem .8rem 0 $boxshadowColor;
+        }
+        &:hover  .card__btn{
+            background-color: rgba(124, 200, 181, .5);
+        }
+        &__btn{ 
+            position: absolute;
+            @extend .flex__center;
+            @include box(101%,100%);
+        }
+        &__btnAdd, &__Remove{
+            display: none;
+        }
+        &__image{
+            position: relative;
+            @extend .flex__center;
+            @include box(100%,70%);
+          
+            &:hover .card__btnAdd {
+                color:  $white;
+                display: block;
+                padding: 1rem 3rem;
+                border: 2px solid  $white;
+                background-color: transparent;
+            }
+            &:hover .card__Remove{
+                color: $green;
+                display: block;
+                padding: 1rem 3rem;
+                background-color:  $white;
+            }
+        }
+
+        &__content{
+            height: 30%;
+            padding: 1rem;
+           @extend .flex__between;
+        }
+        &__price{
+            text-align: right;
+            flex-basis:50%;
+            color: #7cc8b5;
+        }
+        &__title{
+            color : $Text;
+            flex-basis:50%;
+        }
+        &__employeeName{
+            color: $lightText;
+            flex-basis: 100%;
+        }
+    }
+}
